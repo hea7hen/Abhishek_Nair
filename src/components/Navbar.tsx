@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Clock from "./Clock";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +44,8 @@ export default function Navbar() {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-12">
-          {["home", "about", "projects", "skills", "contact"].map((item) => (
+          <Clock />
+          {["home", "projects", "contact"].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}
@@ -72,7 +74,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100">
           <div className="container-custom py-6 flex flex-col space-y-6">
-            {["home", "about", "projects", "skills", "contact"].map((item) => (
+            {["home", "projects", "contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}

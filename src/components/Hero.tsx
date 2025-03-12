@@ -1,14 +1,5 @@
 
-import { ArrowDownCircle } from 'lucide-react';
-
 export default function Hero() {
-  const scrollToNextSection = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section
       id="home"
@@ -42,14 +33,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      
-      <button 
-        onClick={scrollToNextSection}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-400 hover:text-black transition-colors duration-300"
-        aria-label="Scroll down"
-      >
-        <ArrowDownCircle className="h-10 w-10" />
-      </button>
     </section>
   );
 }

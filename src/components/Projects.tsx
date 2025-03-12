@@ -2,14 +2,14 @@
 import { useState, useEffect, useRef } from 'react';
 import ProjectCard from './ProjectCard';
 
-type ProjectCategory = 'all' | 'web' | 'mobile' | 'design';
+type ProjectCategory = 'all' | 'fullstack' | 'ml' | 'frontend' | 'backend';
 
 interface Project {
   id: number;
   title: string;
   description: string;
   image: string;
-  category: 'web' | 'mobile' | 'design';
+  category: 'fullstack' | 'ml' | 'frontend' | 'backend';
   tags: string[];
   liveUrl?: string;
   repoUrl?: string;
@@ -45,61 +45,61 @@ export default function Projects() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "A modern e-commerce platform with product filtering, cart management, and secure checkout.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-      category: "web",
-      tags: ["React", "Node.js", "MongoDB"],
+      title: "AI-Powered Task Manager",
+      description: "A full stack task management application with ML-based task prioritization and smart categorization features.",
+      image: "https://images.unsplash.com/photo-1484417894907-623942c8ee29",
+      category: "fullstack",
+      tags: ["React", "Node.js", "TensorFlow.js", "MongoDB"],
       liveUrl: "#",
       repoUrl: "#"
     },
     {
       id: 2,
-      title: "Finance Dashboard",
-      description: "An interactive dashboard for monitoring financial data with real-time analytics.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      category: "web",
-      tags: ["Vue.js", "D3.js", "Firebase"],
+      title: "Predictive Analytics Dashboard",
+      description: "Interactive dashboard with real-time data visualization and ML-powered predictive analytics for business metrics.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      category: "ml",
+      tags: ["Python", "React", "D3.js", "Scikit-learn"],
       liveUrl: "#",
       repoUrl: "#"
     },
     {
       id: 3,
-      title: "Travel App",
-      description: "A mobile application for planning trips, finding destinations, and booking accommodations.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-      category: "mobile",
-      tags: ["React Native", "GraphQL", "AWS"],
+      title: "E-Commerce Platform",
+      description: "Full-featured e-commerce solution with personalized recommendation system based on user behavior analysis.",
+      image: "https://images.unsplash.com/photo-1556742077-0a6b6a4a4ac4",
+      category: "fullstack",
+      tags: ["Next.js", "Django", "PostgreSQL", "Redis"],
       liveUrl: "#",
       repoUrl: "#"
     },
     {
       id: 4,
-      title: "Portfolio Website",
-      description: "A responsive portfolio website showcasing projects and skills with modern design.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      category: "design",
-      tags: ["HTML", "CSS", "JavaScript"],
+      title: "Image Recognition API",
+      description: "Scalable API for real-time image recognition and classification using convolutional neural networks.",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
+      category: "ml",
+      tags: ["Python", "PyTorch", "FastAPI", "Docker"],
       liveUrl: "#",
       repoUrl: "#"
     },
     {
       id: 5,
-      title: "Weather App",
-      description: "A weather forecast application with detailed reports and interactive maps.",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-      category: "web",
-      tags: ["React", "API Integration", "CSS"],
+      title: "Real-Time Collaboration Tool",
+      description: "Web-based collaboration platform with real-time editing, commenting, and version control features.",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      category: "frontend",
+      tags: ["React", "Socket.io", "Redux", "Firebase"],
       liveUrl: "#",
       repoUrl: "#"
     },
     {
       id: 6,
-      title: "Food Delivery UI",
-      description: "UI/UX design for a food delivery mobile application focusing on user experience.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-      category: "design",
-      tags: ["Figma", "Adobe XD", "Prototyping"],
+      title: "Natural Language Processing Service",
+      description: "Backend service for sentiment analysis, text summarization, and entity recognition with a simple REST API.",
+      image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
+      category: "backend",
+      tags: ["Python", "spaCy", "BERT", "Flask"],
       liveUrl: "#",
       repoUrl: "#"
     }
@@ -111,9 +111,10 @@ export default function Projects() {
 
   const categories: { value: ProjectCategory; label: string }[] = [
     { value: 'all', label: 'All Projects' },
-    { value: 'web', label: 'Web Development' },
-    { value: 'mobile', label: 'Mobile Apps' },
-    { value: 'design', label: 'UI/UX Design' }
+    { value: 'fullstack', label: 'Full Stack' },
+    { value: 'ml', label: 'Machine Learning' },
+    { value: 'frontend', label: 'Frontend' },
+    { value: 'backend', label: 'Backend' }
   ];
 
   return (
@@ -129,8 +130,8 @@ export default function Projects() {
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-slate-600">
-            Explore a collection of my recent work showcasing my skills and experience in web development, 
-            mobile applications, and UI/UX design.
+            A collection of my work showcasing full stack development and machine learning projects 
+            that demonstrate my technical skills and problem-solving approach.
           </p>
         </div>
         

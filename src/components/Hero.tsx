@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { ArrowDownCircle } from 'lucide-react';
+import { ArrowDownCircle, Github, Linkedin } from 'lucide-react';
 
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -51,15 +51,15 @@ export default function Hero() {
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-block mb-4 px-4 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-            <p className="text-white/80 text-sm font-medium animate-slide-down">Welcome to my portfolio</p>
+            <p className="text-white/80 text-sm font-medium animate-slide-down">BSc Computer Science</p>
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
-            Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Digital</span> Experiences
+            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Abhishek Nair</span>
           </h1>
           
           <p className="text-white/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed animate-slide-up animation-delay-200">
-            I design and build exceptional digital experiences that are intuitive, functional, and visually appealing.
+            Full Stack Developer & Machine Learning Enthusiast passionate about building innovative solutions with cutting-edge technologies.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up animation-delay-300">
@@ -75,6 +75,27 @@ export default function Hero() {
             >
               Contact Me
             </button>
+          </div>
+          
+          <div className="flex justify-center mt-8 space-x-4">
+            <a 
+              href="https://github.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+              aria-label="GitHub"
+            >
+              <Github className="h-5 w-5" />
+            </a>
+            <a 
+              href="https://linkedin.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Check } from 'lucide-react';
+import { Check, Brain, Code, Database } from 'lucide-react';
 
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -29,10 +29,10 @@ export default function About() {
   }, []);
 
   const keyPoints = [
-    "Over 5 years of experience in web development",
-    "Specialized in creating responsive, user-friendly interfaces",
-    "Passionate about clean, efficient code and modern technologies",
-    "Collaborative approach and strong communication skills"
+    "Full stack development with modern frameworks (React, Node.js, Django)",
+    "Machine Learning and AI enthusiast with practical project experience",
+    "BSc in Computer Science with strong algorithmic foundations",
+    "Passionate about creating accessible and scalable applications"
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function About() {
             <div className="relative aspect-square rounded-lg overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 mix-blend-overlay" />
               <img 
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&q=80&w=1000" 
                 alt="Developer at work" 
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -65,17 +65,16 @@ export default function About() {
                 About Me
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                Passionate about creating exceptional digital solutions
+                Full Stack Developer with a passion for Machine Learning
               </h2>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                I'm a dedicated web developer with a keen eye for design and a commitment to creating intuitive, 
-                user-centric digital experiences. My approach combines technical expertise with creative thinking 
-                to deliver solutions that not only meet but exceed expectations.
+                I'm Abhishek Nair, a full stack developer with a BSc in Computer Science and a strong interest in Machine Learning. 
+                I combine technical expertise with a deep understanding of user needs to build innovative, scalable applications.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                My journey in technology began with a fascination for how things work, which evolved into a passion 
-                for building digital tools that solve real problems. I believe in continuous learning and staying 
-                at the forefront of industry trends to deliver the best possible outcomes.
+                My journey in technology began with a fascination for problem-solving through code, which evolved into a 
+                passion for creating end-to-end solutions. I work across the entire development stack and am particularly 
+                excited about the intersection of web development and machine learning.
               </p>
             </div>
             
@@ -88,6 +87,21 @@ export default function About() {
                   <p className="text-slate-600">{point}</p>
                 </div>
               ))}
+            </div>
+            
+            <div className="flex flex-wrap gap-4">
+              <div className="flex items-center space-x-2 px-4 py-2 bg-slate-100 rounded-full">
+                <Code className="h-4 w-4 text-blue-600" />
+                <span className="text-sm font-medium">Full Stack</span>
+              </div>
+              <div className="flex items-center space-x-2 px-4 py-2 bg-slate-100 rounded-full">
+                <Brain className="h-4 w-4 text-purple-600" />
+                <span className="text-sm font-medium">Machine Learning</span>
+              </div>
+              <div className="flex items-center space-x-2 px-4 py-2 bg-slate-100 rounded-full">
+                <Database className="h-4 w-4 text-green-600" />
+                <span className="text-sm font-medium">Data Science</span>
+              </div>
             </div>
             
             <button 

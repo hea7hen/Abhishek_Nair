@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Code, Paintbrush, Globe, Database, Layout, Server } from 'lucide-react';
+import { Code, Paintbrush, Brain, Database, Layout, Server, Globe, GitBranch } from 'lucide-react';
 
 interface Skill {
   name: string;
@@ -44,33 +44,44 @@ export default function Skills() {
       title: "Frontend Development",
       icon: <Code className="h-6 w-6" />,
       skills: [
-        { name: "HTML/CSS", level: 90 },
-        { name: "JavaScript", level: 85 },
-        { name: "React", level: 80 },
-        { name: "TypeScript", level: 75 },
-        { name: "Vue.js", level: 70 }
+        { name: "React / Next.js", level: 90 },
+        { name: "TypeScript", level: 85 },
+        { name: "Tailwind CSS", level: 88 },
+        { name: "Redux / Zustand", level: 82 },
+        { name: "WebGL / Three.js", level: 70 }
       ]
     },
     {
       title: "Backend Development",
       icon: <Server className="h-6 w-6" />,
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express", level: 80 },
-        { name: "Python", level: 75 },
-        { name: "Django", level: 70 },
-        { name: "PHP", level: 65 }
+        { name: "Node.js / Express", level: 88 },
+        { name: "Python / Django", level: 85 },
+        { name: "GraphQL", level: 78 },
+        { name: "REST API Design", level: 90 },
+        { name: "Microservices", level: 75 }
       ]
     },
     {
-      title: "Database",
+      title: "Database & DevOps",
       icon: <Database className="h-6 w-6" />,
       skills: [
         { name: "MongoDB", level: 85 },
-        { name: "MySQL", level: 80 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "Firebase", level: 80 },
-        { name: "Redis", level: 60 }
+        { name: "PostgreSQL", level: 82 },
+        { name: "Docker / Kubernetes", level: 75 },
+        { name: "AWS / GCP", level: 80 },
+        { name: "CI/CD Pipelines", level: 78 }
+      ]
+    },
+    {
+      title: "Machine Learning",
+      icon: <Brain className="h-6 w-6" />,
+      skills: [
+        { name: "TensorFlow / PyTorch", level: 82 },
+        { name: "Scikit-learn", level: 85 },
+        { name: "Computer Vision", level: 75 },
+        { name: "NLP", level: 78 },
+        { name: "Data Visualization", level: 80 }
       ]
     },
     {
@@ -78,32 +89,21 @@ export default function Skills() {
       icon: <Paintbrush className="h-6 w-6" />,
       skills: [
         { name: "Figma", level: 85 },
-        { name: "Adobe XD", level: 75 },
-        { name: "Sketch", level: 70 },
+        { name: "User Research", level: 75 },
         { name: "Wireframing", level: 80 },
-        { name: "Prototyping", level: 75 }
+        { name: "Responsive Design", level: 90 },
+        { name: "Design Systems", level: 78 }
       ]
     },
     {
-      title: "CMS",
-      icon: <Layout className="h-6 w-6" />,
+      title: "Tools & Workflow",
+      icon: <GitBranch className="h-6 w-6" />,
       skills: [
-        { name: "WordPress", level: 90 },
-        { name: "Shopify", level: 80 },
-        { name: "Strapi", level: 75 },
-        { name: "Contentful", level: 70 },
-        { name: "Ghost", level: 65 }
-      ]
-    },
-    {
-      title: "Other",
-      icon: <Globe className="h-6 w-6" />,
-      skills: [
-        { name: "Git", level: 90 },
-        { name: "CI/CD", level: 75 },
-        { name: "Docker", level: 70 },
-        { name: "AWS", level: 65 },
-        { name: "SEO", level: 80 }
+        { name: "Git / GitHub", level: 92 },
+        { name: "Agile / Scrum", level: 85 },
+        { name: "Testing (Jest, Cypress)", level: 80 },
+        { name: "Performance Optimization", level: 78 },
+        { name: "Documentation", level: 88 }
       ]
     }
   ];
@@ -119,9 +119,9 @@ export default function Skills() {
           <div className="inline-block px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-3">
             Expertise
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Skills & Technologies</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
           <p className="text-slate-600">
-            I've worked with a variety of technologies and frameworks to create engaging and functional digital solutions.
+            As a full stack developer with a focus on machine learning, I've developed expertise across various technologies and domains.
           </p>
         </div>
         

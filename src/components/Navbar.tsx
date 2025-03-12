@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,34 +29,25 @@ export default function Navbar() {
 
   return (
     <nav
-      className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-300",
-        scrolled ? "py-3 bg-white/80 backdrop-blur-lg shadow-sm" : "py-4 bg-transparent"
-      )}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "py-4 bg-white shadow-sm" : "py-6 bg-white"
+      }`}
     >
       <div className="container-custom flex items-center justify-between">
         <a
           href="#"
-          className="flex items-center text-xl font-display font-bold"
+          className="text-lg font-display font-bold text-black"
         >
-          <span 
-            className={cn(
-              "transition-all duration-300", 
-              scrolled ? "text-primary" : "text-white"
-            )}
-          >Abhishek</span>
+          AN
         </a>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-10">
+        <div className="hidden md:flex items-center space-x-12">
           {["home", "about", "projects", "skills", "contact"].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}
-              className={cn(
-                "text-sm tracking-wide transition-all duration-200 capitalize hover:text-accent relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full",
-                scrolled ? "text-slate-700" : "text-white"
-              )}
+              className="text-sm uppercase tracking-widest text-gray-500 hover:text-black transition-colors duration-200"
             >
               {item}
             </button>
@@ -71,22 +61,22 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           {isOpen ? (
-            <X className="h-5 w-5 text-slate-700" />
+            <X className="h-5 w-5 text-black" />
           ) : (
-            <Menu className={cn("h-5 w-5", scrolled ? "text-slate-700" : "text-white")} />
+            <Menu className="h-5 w-5 text-black" />
           )}
         </button>
       </div>
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-lg shadow-lg">
-          <div className="container-custom py-4 flex flex-col space-y-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100">
+          <div className="container-custom py-6 flex flex-col space-y-6">
             {["home", "about", "projects", "skills", "contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="text-slate-700 text-sm py-2 transition-all capitalize duration-200 hover:text-accent hover:pl-2"
+                className="text-sm uppercase tracking-widest text-gray-500 hover:text-black transition-colors py-2"
               >
                 {item}
               </button>

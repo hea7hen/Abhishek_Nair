@@ -1,5 +1,4 @@
 
-import { useState, useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -24,19 +23,12 @@ export default function ProjectCard({
   className,
   index
 }: ProjectCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-
   return (
     <div
-      ref={cardRef}
       className={cn(
-        "group relative overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-500",
-        `animate-slide-up animation-delay-${(index % 5) * 100}`,
+        "group border border-gray-200 hover:border-gray-400 transition-all duration-300",
         className
       )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="aspect-video overflow-hidden">
         <img
@@ -48,30 +40,30 @@ export default function ProjectCard({
       </div>
       
       <div className="p-6">
-        <div className="mb-4 flex flex-wrap gap-2">
+        <h3 className="text-xl font-bold mb-4 text-gray-900">{title}</h3>
+        <p className="text-gray-600 mb-6">{description}</p>
+        
+        <div className="mb-6 flex flex-wrap gap-2">
           {tags.map((tag, i) => (
             <span 
               key={i} 
-              className="text-xs font-medium px-2 py-1 rounded-full bg-slate-100 text-slate-600"
+              className="text-xs px-3 py-1 border border-gray-200 text-gray-600"
             >
               {tag}
             </span>
           ))}
         </div>
         
-        <h3 className="text-xl font-bold mb-2 text-gray-900">{title}</h3>
-        <p className="text-gray-600 mb-4 line-clamp-2">{description}</p>
-        
-        <div className="flex space-x-3">
+        <div className="flex space-x-6">
           {liveUrl && (
             <a 
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-slate-600 hover:text-slate-900 transition-colors text-sm"
+              className="flex items-center text-gray-600 hover:text-black transition-colors text-sm uppercase tracking-wider"
             >
-              <ExternalLink className="h-4 w-4 mr-1" />
-              Live Preview
+              <ExternalLink className="h-4 w-4 mr-2" />
+              View Project
             </a>
           )}
           
@@ -80,22 +72,14 @@ export default function ProjectCard({
               href={repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-slate-600 hover:text-slate-900 transition-colors text-sm"
+              className="flex items-center text-gray-600 hover:text-black transition-colors text-sm uppercase tracking-wider"
             >
-              <Github className="h-4 w-4 mr-1" />
+              <Github className="h-4 w-4 mr-2" />
               Source Code
             </a>
           )}
         </div>
       </div>
-      
-      {/* Hover effect gradient overlay */}
-      <div 
-        className={cn(
-          "absolute inset-0 bg-gradient-to-t from-slate-500/5 to-transparent opacity-0 transition-opacity duration-500",
-          isHovered ? "opacity-100" : "opacity-0"
-        )}
-      />
     </div>
   );
 }

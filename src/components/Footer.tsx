@@ -30,7 +30,7 @@ export default function Footer() {
                 aria-label={link.label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-blue-600 hover:text-white transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400 hover:bg-slate-700 hover:text-white transition-all duration-300"
               >
                 {link.icon}
               </a>
@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-slate-800/50 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-400 text-sm mb-4 md:mb-0">
             © {currentYear} Abhishek Nair. All rights reserved.
           </p>

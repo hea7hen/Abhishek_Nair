@@ -45,12 +45,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 -z-10" />
       
       {/* Abstract shapes */}
-      <div className="absolute top-[20%] left-[15%] w-64 h-64 rounded-full bg-blue-500/10 blur-3xl animate-pulse" />
-      <div className="absolute bottom-[20%] right-[15%] w-80 h-80 rounded-full bg-purple-500/10 blur-3xl animate-float" />
+      <div className="absolute top-[20%] left-[15%] w-64 h-64 rounded-full bg-blue-500/5 blur-3xl animate-pulse" />
+      <div className="absolute bottom-[20%] right-[15%] w-80 h-80 rounded-full bg-purple-500/5 blur-3xl animate-float" />
       
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-block mb-4 px-4 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+          <div className="inline-block mb-4 px-4 py-1 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
             <p className="text-white/80 text-sm font-medium animate-slide-down">BSc Computer Science</p>
           </div>
           
@@ -65,13 +65,13 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up animation-delay-300">
             <button 
               onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}
-              className="px-6 py-3 bg-white text-slate-900 rounded-lg font-medium hover:shadow-lg hover:shadow-white/20 transition-all duration-300 transform hover:-translate-y-1"
+              className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/10 text-white rounded-lg font-medium hover:bg-white/20 transition-all duration-300"
             >
               View My Work
             </button>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
-              className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-lg font-medium hover:bg-white/20 transition-all duration-300"
+              className="px-6 py-3 bg-transparent border border-white/20 text-white rounded-lg font-medium hover:bg-white/10 transition-all duration-300"
             >
               Contact Me
             </button>
@@ -82,7 +82,7 @@ export default function Hero() {
               href="https://github.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
@@ -91,7 +91,7 @@ export default function Hero() {
               href="https://linkedin.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
@@ -102,7 +102,7 @@ export default function Hero() {
       
       <button 
         onClick={scrollToNextSection}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 hover:text-white transition-colors duration-300 animate-bounce"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/40 hover:text-white transition-colors duration-300 animate-bounce"
         aria-label="Scroll down"
       >
         <ArrowDownCircle className="h-10 w-10" />

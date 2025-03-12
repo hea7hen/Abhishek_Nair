@@ -31,7 +31,7 @@ export default function ProjectCard({
     <div
       ref={cardRef}
       className={cn(
-        "group relative overflow-hidden rounded-xl bg-white border border-gray-200/50 shadow-lg transition-all duration-500",
+        "group relative overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-500",
         `animate-slide-up animation-delay-${(index % 5) * 100}`,
         className
       )}
@@ -52,7 +52,7 @@ export default function ProjectCard({
           {tags.map((tag, i) => (
             <span 
               key={i} 
-              className="text-xs font-medium px-2 py-1 rounded-full bg-blue-50 text-blue-700"
+              className="text-xs font-medium px-2 py-1 rounded-full bg-slate-100 text-slate-600"
             >
               {tag}
             </span>
@@ -68,7 +68,7 @@ export default function ProjectCard({
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-blue-600 hover:text-blue-800 transition-colors text-sm font-medium"
+              className="flex items-center text-slate-600 hover:text-slate-900 transition-colors text-sm"
             >
               <ExternalLink className="h-4 w-4 mr-1" />
               Live Preview
@@ -80,7 +80,7 @@ export default function ProjectCard({
               href={repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium"
+              className="flex items-center text-slate-600 hover:text-slate-900 transition-colors text-sm"
             >
               <Github className="h-4 w-4 mr-1" />
               Source Code
@@ -92,7 +92,7 @@ export default function ProjectCard({
       {/* Hover effect gradient overlay */}
       <div 
         className={cn(
-          "absolute inset-0 bg-gradient-to-t from-blue-500/5 to-transparent opacity-0 transition-opacity duration-500",
+          "absolute inset-0 bg-gradient-to-t from-slate-500/5 to-transparent opacity-0 transition-opacity duration-500",
           isHovered ? "opacity-100" : "opacity-0"
         )}
       />

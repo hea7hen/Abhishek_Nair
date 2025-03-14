@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, Settings } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Clock from "./Clock";
 
 export default function Navbar() {
@@ -90,17 +90,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-
-      {/* Half mechanical gear decoration */}
-      <div className="hidden md:block fixed right-0 top-1/3 transform translate-x-1/2">
-        <div className="relative">
-          <Settings 
-            className="h-40 w-40 text-gray-200 animate-spin-slow" 
-            strokeWidth={1}
-          />
-          <div className="absolute top-0 left-0 w-20 h-40 bg-white" />
-        </div>
-      </div>
     </nav>
   );
 }

@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Mail, MapPin, Phone, Send, Github, Linkedin } from 'lucide-react';
 import { toast } from 'sonner';
@@ -61,10 +60,7 @@ export default function Contact() {
     >
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-sm font-medium mb-3">
-            Contact
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">Get In Touch</h2>
           <p className="text-slate-600">
             Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!
           </p>
@@ -73,7 +69,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="p-8">
-              <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+              <h3 className="text-2xl font-bold mb-6 font-display">Send Me a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -142,7 +138,7 @@ export default function Contact() {
           
           <div className="lg:flex flex-col justify-between">
             <div className="mb-8">
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-6 font-display">Contact Information</h3>
               <p className="text-slate-600 mb-8">
                 Feel free to get in touch with me through any of the following methods.
               </p>

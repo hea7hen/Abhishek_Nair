@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Mail, MapPin, Phone, Send, Github, Linkedin } from 'lucide-react';
 import { toast } from 'sonner';
@@ -70,7 +69,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="p-8">
-              <h3 className="text-2xl font-bold mb-6 font-sans">Send Me a Message</h3>
+              <h3 className="text-2xl font-bold mb-6 font-display">Send Me a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -137,45 +136,26 @@ export default function Contact() {
             </div>
           </div>
           
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-2xl font-bold mb-6 font-sans">Contact Information</h3>
-            <p className="text-slate-600 mb-8">
-              Feel free to get in touch with me through any of the following methods.
-            </p>
-            
-            <div className="space-y-8">
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
+          <div className="lg:flex flex-col justify-between">
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold mb-6 font-display">Contact Information</h3>
+              <p className="text-slate-600 mb-8">
+                Feel free to get in touch with me through any of the following methods.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
                   <Mail className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Email</p>
                   <p className="text-lg font-medium">abhisheknair616@gmail.com</p>
                 </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="bg-green-100 p-3 rounded-lg">
-                  <Phone className="h-6 w-6 text-green-600" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Phone</p>
+                <div className="flex items-start space-x-4">
+                  <Phone className="h-6 w-6 text-blue-600" />
                   <p className="text-lg font-medium">7349723145</p>
                 </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="bg-purple-100 p-3 rounded-lg">
-                  <MapPin className="h-6 w-6 text-purple-600" />
+                <div className="flex items-start space-x-4">
+                  <MapPin className="h-6 w-6 text-blue-600" />
+                  <p className="text-lg font-medium">Bangalore</p>
                 </div>
-                <div>
-                  <p className="text-sm text-gray-500 mb-1">Location</p>
-                  <p className="text-lg font-medium">Bangalore, India</p>
-                </div>
-              </div>
-              
-              <div className="mt-8 pt-8 border-t border-gray-100">
-                <p className="text-sm text-gray-500 mb-4">Connect with me</p>
                 <div className="flex space-x-4">
                   <a 
                     href="https://github.com/hea7hen" 
@@ -193,15 +173,15 @@ export default function Contact() {
                   >
                     <Linkedin className="h-6 w-6 text-blue-700" />
                   </a>
-                  <a 
-                    href="https://x.com/heathen_punk" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="p-3 bg-gray-800 rounded-full transition hover:bg-gray-900"
-                  >
-                    <Twitter className="h-6 w-6 text-white" />
-                  </a>
                 </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden h-64 bg-gray-200">
+              <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                <p className="text-slate-600 text-center px-4">
+                  Map placeholder - integrate with Google Maps or similar service
+                </p>
               </div>
             </div>
           </div>

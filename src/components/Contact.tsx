@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Github, Linkedin } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function Contact() {
@@ -11,7 +11,7 @@ export default function Contact() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -43,8 +43,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
     setTimeout(() => {
       toast.success('Message sent successfully!', {
         description: 'Thank you for your message. I will get back to you soon.',
@@ -53,24 +52,6 @@ export default function Contact() {
       setIsSubmitting(false);
     }, 1500);
   };
-
-  const contactInfo = [
-    {
-      icon: <Mail className="h-5 w-5" />,
-      label: "Email",
-      value: "contact@example.com"
-    },
-    {
-      icon: <Phone className="h-5 w-5" />,
-      label: "Phone",
-      value: "+1 (123) 456-7890"
-    },
-    {
-      icon: <MapPin className="h-5 w-5" />,
-      label: "Location",
-      value: "New York, NY, USA"
-    }
-  ];
 
   return (
     <section 
@@ -164,26 +145,43 @@ export default function Contact() {
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               <p className="text-slate-600 mb-8">
                 Feel free to get in touch with me through any of the following methods.
-                I'm always open to discussing new projects, creative ideas, or opportunities.
               </p>
               
               <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-medium text-gray-500 mb-1">{info.label}</h4>
-                      <p className="text-lg font-medium">{info.value}</p>
-                    </div>
-                  </div>
-                ))}
+                <div className="flex items-start space-x-4">
+                  <Mail className="h-6 w-6 text-blue-600" />
+                  <p className="text-lg font-medium">abhisheknair616@gmail.com</p>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <Phone className="h-6 w-6 text-blue-600" />
+                  <p className="text-lg font-medium">7349723145</p>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <MapPin className="h-6 w-6 text-blue-600" />
+                  <p className="text-lg font-medium">Bangalore</p>
+                </div>
+                <div className="flex space-x-4">
+                  <a 
+                    href="https://github.com/hea7hen" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gray-200 rounded-full transition hover:bg-gray-300"
+                  >
+                    <Github className="h-6 w-6 text-gray-700" />
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/abhishek-nair-302235211/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-3 bg-blue-200 rounded-full transition hover:bg-blue-300"
+                  >
+                    <Linkedin className="h-6 w-6 text-blue-700" />
+                  </a>
+                </div>
               </div>
             </div>
-            
+
             <div className="rounded-2xl overflow-hidden h-64 bg-gray-200">
-              {/* Placeholder for a map or additional content */}
               <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
                 <p className="text-slate-600 text-center px-4">
                   Map placeholder - integrate with Google Maps or similar service

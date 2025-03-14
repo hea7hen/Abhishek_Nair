@@ -41,20 +41,6 @@ export default function Navbar() {
         >
           AN
         </a>
-        
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-12">
-          <Clock />
-          {["home", "projects", "contact"].map((item) => (
-            <button
-              key={item}
-              onClick={() => scrollToSection(item)}
-              className="text-sm uppercase tracking-widest text-gray-500 hover:text-black transition-colors duration-200"
-            >
-              {item}
-            </button>
-          ))}
-        </div>
 
         {/* Mobile menu button */}
         <button
@@ -68,6 +54,24 @@ export default function Navbar() {
             <Menu className="h-5 w-5 text-black" />
           )}
         </button>
+
+        {/* Clock in the top right corner */}
+        <div className="absolute top-0 right-0 py-4 pr-4">
+          <Clock />
+        </div>
+      </div>
+
+      {/* Desktop Navigation in the top center */}
+      <div className="hidden md:flex items-center justify-center space-x-12 absolute top-0 left-1/2 transform -translate-x-1/2 py-4">
+        {["home", "projects", "contact"].map((item) => (
+          <button
+            key={item}
+            onClick={() => scrollToSection(item)}
+            className="text-sm uppercase tracking-widest text-gray-500 hover:text-black transition-colors duration-200"
+          >
+            {item}
+          </button>
+        ))}
       </div>
 
       {/* Mobile menu */}

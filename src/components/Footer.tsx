@@ -5,8 +5,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
-    { icon: <Github className="h-5 w-5" />, href: "https://github.com", label: "GitHub" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: <Github className="h-5 w-5" />, href: "https://github.com/hea7hen", label: "GitHub" },
+    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/abhishek-nair-302235211/", label: "LinkedIn" },
     { icon: <Twitter className="h-5 w-5" />, href: "#", label: "Twitter" },
     { icon: <Mail className="h-5 w-5" />, href: "mailto:contact@abhisheknair.com", label: "Email" }
   ];

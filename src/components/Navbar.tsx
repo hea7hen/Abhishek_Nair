@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Linkedin } from "lucide-react";
 import Clock from "./Clock";
 
 export default function Navbar() {
@@ -61,8 +61,17 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Desktop Navigation in the top center */}
+      {/* Desktop Navigation in the top center with GitHub and LinkedIn icons */}
       <div className="hidden md:flex items-center justify-center space-x-12 absolute top-0 left-1/2 transform -translate-x-1/2 py-4">
+        <a 
+          href="https://github.com/hea7hen" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-gray-500 hover:text-black transition-colors"
+          aria-label="GitHub"
+        >
+          <Github className="h-5 w-5" />
+        </a>
         {["home", "projects", "contact"].map((item) => (
           <button
             key={item}
@@ -72,12 +81,41 @@ export default function Navbar() {
             {item}
           </button>
         ))}
+        <a 
+          href="https://www.linkedin.com/in/abhishek-nair-302235211/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-gray-500 hover:text-black transition-colors"
+          aria-label="LinkedIn"
+        >
+          <Linkedin className="h-5 w-5" />
+        </a>
       </div>
 
       {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100">
           <div className="container-custom py-6 flex flex-col space-y-6">
+            <div className="flex justify-center space-x-8 py-2">
+              <a 
+                href="https://github.com/hea7hen" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-black transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/abhishek-nair-302235211/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-black transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
             {["home", "projects", "contact"].map((item) => (
               <button
                 key={item}

@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import ProjectCard from './ProjectCard';
 import { Button } from './ui/button';
@@ -132,10 +131,6 @@ export default function Projects() {
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">Featured Projects</h2>
-          <p className="text-slate-600">
-            A collection of my work showcasing full stack development and machine learning projects 
-            that demonstrate my technical skills and problem-solving approach.
-          </p>
         </div>
         
         <div className="flex justify-center mb-10">

@@ -42,10 +42,8 @@ export default function ProjectCard({
       </div>
       
       <div className="p-6">
-        <div className="flex justify-between items-start mb-3">
-          <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-          <span className="text-xs text-gray-500">{createdAt}</span>
-        </div>
+        <h3 className="text-xl font-bold text-gray-900 mb-2 font-serif">{title}</h3>
+        <div className="text-xs text-gray-500 mb-4">{createdAt}</div>
         
         <p className="text-gray-600 mb-6">{description}</p>
         

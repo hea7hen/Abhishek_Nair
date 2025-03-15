@@ -15,6 +15,7 @@ interface Project {
   tags: string[];
   liveUrl?: string;
   repoUrl: string;
+  createdAt: string;
 }
 
 export default function Projects() {
@@ -47,21 +48,24 @@ export default function Projects() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "NFT Marketplace",
-      description: "A frontend application for an NFT marketplace, enabling users to mint, buy, and sell non-fungible tokens.",
+      title: "Neo NFT Marketplace",
+      description: "A frontend application for an NFT marketplace, crafted for the Neo Hackathon, enabling seamless minting, buying, and selling of digital assets.",
       image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2432&auto=format&fit=crop",
       category: "frontend",
       tags: ["React.js", "Web3.js", "Solidity"],
-      repoUrl: "https://github.com/hea7hen/neo-nft-frontend"
+      repoUrl: "https://github.com/hea7hen/neo-nft-frontend",
+      createdAt: "August 27, 2023"
     },
     {
       id: 2,
-      title: "Frontend Project",
+      title: "BlackBelt: Dynamic Frontend UI Showcase",
       description: "A frontend-focused project demonstrating advanced UI/UX design principles and responsive layouts.",
-      image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2670&auto=format&fit=crop",
+      image: "/lovable-uploads/3c531d70-613b-4b41-8ff9-910e157c0704.png",
       category: "frontend",
       tags: ["HTML", "CSS", "JavaScript"],
-      repoUrl: "https://github.com/hea7hen/blackbelt"
+      liveUrl: "https://hea7hen.github.io/blackbelt/",
+      repoUrl: "https://github.com/hea7hen/blackbelt",
+      createdAt: "July 10, 2023"
     },
     {
       id: 3,
@@ -70,35 +74,40 @@ export default function Projects() {
       image: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=2670&auto=format&fit=crop",
       category: "python",
       tags: ["Python", "Tesseract OCR"],
-      repoUrl: "https://github.com/hea7hen/OCR-Image-to-text"
+      repoUrl: "https://github.com/hea7hen/OCR-Image-to-text",
+      createdAt: "June 7, 2024"
     },
     {
       id: 4,
       title: "Full Stack Blog App",
       description: "A full-featured blogging platform with functionalities like user authentication, content creation, and comments.",
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2670&auto=format&fit=crop",
+      image: "/lovable-uploads/4b9a9b43-bc85-466f-8835-90f3931962d1.png",
       category: "fullstack",
       tags: ["Node.js", "Express.js", "MongoDB"],
-      repoUrl: "https://github.com/hea7hen/AI_Blog"
+      liveUrl: "https://thoughtthread.onrender.com/",
+      repoUrl: "https://github.com/hea7hen/AI_Blog",
+      createdAt: "July 3, 2024"
     },
     {
       id: 5,
       title: "Full Stack API Book Certification",
-      description: "A platform that provides certifications for books, allowing users to verify the authenticity and details of literary works.",
-      image: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=2670&auto=format&fit=crop",
+      description: "A platform that provides verifiable, shareable certifications for book completion, ensuring authenticity and recognition of literary achievements.",
+      image: "/lovable-uploads/fd819102-0238-41a9-987f-5c308e903369.png",
       category: "fullstack",
-      tags: ["Next.js", "Tailwind CSS"],
-      liveUrl: "https://lnkd.in/gywBMV8t",
-      repoUrl: "https://github.com/hea7hen/BookCert"
+      tags: ["Next.js", "Tailwind CSS", "Firebase", "Google Books API", "Firestore"],
+      liveUrl: "https://u4rsnob0spemqbtx.vercel.app/",
+      repoUrl: "https://github.com/hea7hen/BookCert",
+      createdAt: "December 14, 2024"
     },
     {
       id: 6,
-      title: "MVC Model Fullstack Project",
-      description: "A full-stack application following the MVC architecture to generate random characters, possibly for gaming or storytelling purposes.",
+      title: "Random Character Generator",
+      description: "A web application designed to create random minecraft characters, offering both predefined and customizable options. Users can generate characters with random attributes or define specific characteristics to suit their preferences.",
       image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2671&auto=format&fit=crop",
       category: "fullstack",
       tags: ["Node.js", "Express.js", "SQLite", "EJS"],
-      repoUrl: "https://github.com/hea7hen/Random_charactor_Generator"
+      repoUrl: "https://github.com/hea7hen/Random_charactor_Generator",
+      createdAt: "May 23, 2024"
     }
   ];
 
@@ -158,6 +167,7 @@ export default function Projects() {
               liveUrl={project.liveUrl}
               repoUrl={project.repoUrl}
               index={index}
+              createdAt={project.createdAt}
             />
           ))}
         </div>

@@ -11,6 +11,7 @@ interface ProjectCardProps {
   repoUrl?: string;
   className?: string;
   index: number;
+  createdAt: string;
 }
 
 export default function ProjectCard({
@@ -21,7 +22,8 @@ export default function ProjectCard({
   liveUrl,
   repoUrl,
   className,
-  index
+  index,
+  createdAt
 }: ProjectCardProps) {
   return (
     <div
@@ -40,7 +42,11 @@ export default function ProjectCard({
       </div>
       
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-4 text-gray-900">{title}</h3>
+        <div className="flex justify-between items-start mb-3">
+          <h3 className="text-xl font-bold text-gray-900">{title}</h3>
+          <span className="text-xs text-gray-500">{createdAt}</span>
+        </div>
+        
         <p className="text-gray-600 mb-6">{description}</p>
         
         <div className="mb-6 flex flex-wrap gap-2">

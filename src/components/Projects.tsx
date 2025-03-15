@@ -1,5 +1,8 @@
+
 import { useState, useEffect, useRef } from 'react';
 import ProjectCard from './ProjectCard';
+import { Button } from './ui/button';
+import { ExternalLink, Github } from 'lucide-react';
 
 type ProjectCategory = 'all' | 'fullstack' | 'frontend' | 'backend' | 'python';
 

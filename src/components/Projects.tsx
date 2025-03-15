@@ -1,17 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import ProjectCard from './ProjectCard';
 
-type ProjectCategory = 'all' | 'fullstack' | 'ml' | 'frontend' | 'backend';
+type ProjectCategory = 'all' | 'fullstack' | 'frontend' | 'backend' | 'python';
 
 interface Project {
   id: number;
   title: string;
   description: string;
   image: string;
-  category: 'fullstack' | 'ml' | 'frontend' | 'backend';
+  category: 'fullstack' | 'frontend' | 'backend' | 'python';
   tags: string[];
   liveUrl?: string;
-  repoUrl?: string;
+  repoUrl: string;
 }
 
 export default function Projects() {
@@ -44,63 +44,58 @@ export default function Projects() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "AI-Powered Task Manager",
-      description: "A full stack task management application with ML-based task prioritization and smart categorization features.",
-      image: "https://images.unsplash.com/photo-1484417894907-623942c8ee29",
-      category: "fullstack",
-      tags: ["React", "Node.js", "TensorFlow.js", "MongoDB"],
-      liveUrl: "#",
-      repoUrl: "#"
+      title: "NFT Marketplace",
+      description: "A frontend application for an NFT marketplace, enabling users to mint, buy, and sell non-fungible tokens.",
+      image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2432&auto=format&fit=crop",
+      category: "frontend",
+      tags: ["React.js", "Web3.js", "Solidity"],
+      repoUrl: "https://github.com/hea7hen/neo-nft-frontend"
     },
     {
       id: 2,
-      title: "Predictive Analytics Dashboard",
-      description: "Interactive dashboard with real-time data visualization and ML-powered predictive analytics for business metrics.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-      category: "ml",
-      tags: ["Python", "React", "D3.js", "Scikit-learn"],
-      liveUrl: "#",
-      repoUrl: "#"
+      title: "Frontend Project",
+      description: "A frontend-focused project demonstrating advanced UI/UX design principles and responsive layouts.",
+      image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2670&auto=format&fit=crop",
+      category: "frontend",
+      tags: ["HTML", "CSS", "JavaScript"],
+      repoUrl: "https://github.com/hea7hen/blackbelt"
     },
     {
       id: 3,
-      title: "E-Commerce Platform",
-      description: "Full-featured e-commerce solution with personalized recommendation system based on user behavior analysis.",
-      image: "https://images.unsplash.com/photo-1556742077-0a6b6a4a4ac4",
-      category: "fullstack",
-      tags: ["Next.js", "Django", "PostgreSQL", "Redis"],
-      liveUrl: "#",
-      repoUrl: "#"
+      title: "Image to Text OCR",
+      description: "An application that extracts text from images using Optical Character Recognition (OCR) techniques.",
+      image: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=2670&auto=format&fit=crop",
+      category: "python",
+      tags: ["Python", "Tesseract OCR"],
+      repoUrl: "https://github.com/hea7hen/OCR-Image-to-text"
     },
     {
       id: 4,
-      title: "Image Recognition API",
-      description: "Scalable API for real-time image recognition and classification using convolutional neural networks.",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-      category: "ml",
-      tags: ["Python", "PyTorch", "FastAPI", "Docker"],
-      liveUrl: "#",
-      repoUrl: "#"
+      title: "Full Stack Blog App",
+      description: "A full-featured blogging platform with functionalities like user authentication, content creation, and comments.",
+      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2670&auto=format&fit=crop",
+      category: "fullstack",
+      tags: ["Node.js", "Express.js", "MongoDB"],
+      repoUrl: "https://github.com/hea7hen/AI_Blog"
     },
     {
       id: 5,
-      title: "Real-Time Collaboration Tool",
-      description: "Web-based collaboration platform with real-time editing, commenting, and version control features.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-      category: "frontend",
-      tags: ["React", "Socket.io", "Redux", "Firebase"],
-      liveUrl: "#",
-      repoUrl: "#"
+      title: "Full Stack API Book Certification",
+      description: "A platform that provides certifications for books, allowing users to verify the authenticity and details of literary works.",
+      image: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=2670&auto=format&fit=crop",
+      category: "fullstack",
+      tags: ["Next.js", "Tailwind CSS"],
+      liveUrl: "https://lnkd.in/gywBMV8t",
+      repoUrl: "https://github.com/hea7hen/BookCert"
     },
     {
       id: 6,
-      title: "Natural Language Processing Service",
-      description: "Backend service for sentiment analysis, text summarization, and entity recognition with a simple REST API.",
-      image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb",
-      category: "backend",
-      tags: ["Python", "spaCy", "BERT", "Flask"],
-      liveUrl: "#",
-      repoUrl: "#"
+      title: "MVC Model Fullstack Project",
+      description: "A full-stack application following the MVC architecture to generate random characters, possibly for gaming or storytelling purposes.",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2671&auto=format&fit=crop",
+      category: "fullstack",
+      tags: ["Node.js", "Express.js", "SQLite", "EJS"],
+      repoUrl: "https://github.com/hea7hen/Random_charactor_Generator"
     }
   ];
 
@@ -111,9 +106,9 @@ export default function Projects() {
   const categories: { value: ProjectCategory; label: string }[] = [
     { value: 'all', label: 'All Projects' },
     { value: 'fullstack', label: 'Full Stack' },
-    { value: 'ml', label: 'Machine Learning' },
     { value: 'frontend', label: 'Frontend' },
-    { value: 'backend', label: 'Backend' }
+    { value: 'backend', label: 'Backend' },
+    { value: 'python', label: 'Python' }
   ];
 
   return (

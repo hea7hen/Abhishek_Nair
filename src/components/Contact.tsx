@@ -1,5 +1,7 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { Mail, MapPin, Phone, Send, Github, Linkedin } from 'lucide-react';
+import { FaXTwitter } from 'react-icons/fa6';
 import { toast } from 'sonner';
 
 export default function Contact() {
@@ -66,10 +68,11 @@ export default function Contact() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          {/* Form Column - Takes 3/5 of the space */}
+          <div className="lg:col-span-3 bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="p-8">
-              <h3 className="text-2xl font-bold mb-6 font-display">Send Me a Message</h3>
+              <h3 className="text-2xl font-bold mb-6 font-sans tracking-tight">Send Me a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -136,52 +139,84 @@ export default function Contact() {
             </div>
           </div>
           
-          <div className="lg:flex flex-col justify-between">
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold mb-6 font-display">Contact Information</h3>
-              <p className="text-slate-600 mb-8">
-                Feel free to get in touch with me through any of the following methods.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
+          {/* Contact Info Column - Takes 2/5 of the space */}
+          <div className="lg:col-span-2 bg-white rounded-2xl shadow-xl p-8">
+            <h3 className="text-2xl font-bold mb-6 font-sans tracking-tight">Contact Information</h3>
+            <p className="text-slate-600 mb-8">
+              Feel free to reach out through any of these channels:
+            </p>
+            
+            <div className="space-y-6 mb-10">
+              <div className="flex items-start space-x-4">
+                <div className="bg-blue-100 p-3 rounded-full">
                   <Mail className="h-6 w-6 text-blue-600" />
-                  <p className="text-lg font-medium">abhisheknair616@gmail.com</p>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <Phone className="h-6 w-6 text-blue-600" />
-                  <p className="text-lg font-medium">7349723145</p>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 text-blue-600" />
-                  <p className="text-lg font-medium">Bangalore</p>
-                </div>
-                <div className="flex space-x-4">
-                  <a 
-                    href="https://github.com/hea7hen" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="p-3 bg-gray-200 rounded-full transition hover:bg-gray-300"
-                  >
-                    <Github className="h-6 w-6 text-gray-700" />
-                  </a>
-                  <a 
-                    href="https://www.linkedin.com/in/abhishek-nair-302235211/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="p-3 bg-blue-200 rounded-full transition hover:bg-blue-300"
-                  >
-                    <Linkedin className="h-6 w-6 text-blue-700" />
+                <div>
+                  <p className="text-sm text-gray-500 mb-1">Email</p>
+                  <a href="mailto:abhisheknair616@gmail.com" className="text-lg font-medium hover:text-blue-600 transition-colors">
+                    abhisheknair616@gmail.com
                   </a>
                 </div>
               </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="bg-green-100 p-3 rounded-full">
+                  <Phone className="h-6 w-6 text-green-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 mb-1">Phone</p>
+                  <p className="text-lg font-medium">7349723145</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4">
+                <div className="bg-purple-100 p-3 rounded-full">
+                  <MapPin className="h-6 w-6 text-purple-600" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 mb-1">Location</p>
+                  <p className="text-lg font-medium">Bangalore, India</p>
+                </div>
+              </div>
             </div>
-
-            <div className="rounded-2xl overflow-hidden h-64 bg-gray-200">
-              <div className="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                <p className="text-slate-600 text-center px-4">
-                  Map placeholder - integrate with Google Maps or similar service
-                </p>
+            
+            <div className="border-t border-gray-200 pt-8">
+              <p className="text-sm text-gray-500 mb-4">Connect with me on social media</p>
+              <div className="flex space-x-4">
+                <a 
+                  href="https://github.com/hea7hen" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 bg-gray-100 rounded-full transition hover:bg-gray-200"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-6 w-6 text-gray-700" />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/abhishek-nair-302235211/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 bg-blue-100 rounded-full transition hover:bg-blue-200"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-6 w-6 text-blue-700" />
+                </a>
+                <a 
+                  href="https://x.com/heathen_punk" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 bg-black rounded-full transition hover:bg-gray-800"
+                  aria-label="Twitter"
+                >
+                  <FaXTwitter className="h-6 w-6 text-white" />
+                </a>
+                <a 
+                  href="mailto:abhisheknair616@gmail.com" 
+                  className="p-3 bg-red-100 rounded-full transition hover:bg-red-200"
+                  aria-label="Email"
+                >
+                  <Mail className="h-6 w-6 text-red-700" />
+                </a>
               </div>
             </div>
           </div>

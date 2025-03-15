@@ -1,5 +1,6 @@
 
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -7,8 +8,8 @@ export default function Footer() {
   const socialLinks = [
     { icon: <Github className="h-5 w-5" />, href: "https://github.com/hea7hen", label: "GitHub" },
     { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/abhishek-nair-302235211/", label: "LinkedIn" },
-    { icon: <Twitter className="h-5 w-5" />, href: "#", label: "Twitter" },
-    { icon: <Mail className="h-5 w-5" />, href: "mailto:contact@abhisheknair.com", label: "Email" }
+    { icon: <FaXTwitter className="h-5 w-5" />, href: "https://x.com/heathen_punk", label: "Twitter" },
+    { icon: <Mail className="h-5 w-5" />, href: "mailto:abhisheknair616@gmail.com", label: "Email" }
   ];
 
   return (

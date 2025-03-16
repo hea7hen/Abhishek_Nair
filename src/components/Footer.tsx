@@ -12,9 +12,8 @@ export default function Footer() {
     { icon: <Mail className="h-5 w-5" />, href: "mailto:abhisheknair616@gmail.com", label: "Email" },
     { 
       icon: <img src="/lovable-uploads/a1a8d76c-9203-4ae2-bf51-0ffbfef138cc.png" alt="Chess" className="h-5 w-5" />, 
-      href: "#", 
-      label: "Chess", 
-      noLink: true 
+      href: "https://www.chess.com/member/wanacrie", 
+      label: "Chess"
     }
   ];
 
@@ -31,26 +30,16 @@ export default function Footer() {
           
           <div className="flex space-x-6">
             {socialLinks.map((link, index) => (
-              link.noLink ? (
-                <span
-                  key={index}
-                  aria-label={link.label}
-                  className="text-gray-500 cursor-default"
-                >
-                  {link.icon}
-                </span>
-              ) : (
-                <a
-                  key={index}
-                  href={link.href}
-                  aria-label={link.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-500 hover:text-black transition-all duration-300"
-                >
-                  {link.icon}
-                </a>
-              )
+              <a
+                key={index}
+                href={link.href}
+                aria-label={link.label}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-black transition-all duration-300"
+              >
+                {link.icon}
+              </a>
             ))}
           </div>
         </div>

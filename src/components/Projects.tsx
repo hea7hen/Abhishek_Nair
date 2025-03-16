@@ -238,18 +238,35 @@ export default function Projects() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projectsInProgress.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                tags={project.tags}
-                liveUrl={project.liveUrl}
-                repoUrl={project.repoUrl}
-                index={index}
-                createdAt={project.createdAt}
-                inProgress={true}
-              />
+              <div 
+                key={project.id} 
+                className="p-5 bg-gray-50 border border-gray-100 hover:border-gray-200 transition-all duration-300"
+              >
+                <div className="flex justify-between items-center mb-3">
+                  <h3 className="text-xl font-bold text-gray-900 font-serif">{project.title}</h3>
+                  <span className="text-xs font-medium bg-amber-100 text-amber-800 px-2 py-1 rounded">
+                    {project.createdAt}
+                  </span>
+                </div>
+                
+                <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
+                
+                <div className="flex flex-wrap gap-2 mb-0">
+                  {project.tags.slice(0, 3).map((tag, i) => (
+                    <span 
+                      key={i} 
+                      className="text-xs px-2 py-0.5 bg-gray-100 text-gray-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  {project.tags.length > 3 && (
+                    <span className="text-xs px-2 py-0.5 bg-gray-100 text-gray-500">
+                      +{project.tags.length - 3}
+                    </span>
+                  )}
+                </div>
+              </div>
             ))}
           </div>
         </div>

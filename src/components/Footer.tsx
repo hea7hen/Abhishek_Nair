@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Trophy, Dices } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
@@ -10,8 +10,18 @@ export default function Footer() {
     { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/abhishek-nair-302235211/", label: "LinkedIn" },
     { icon: <FaXTwitter className="h-5 w-5" />, href: "https://x.com/heathen_punk", label: "Twitter" },
     { icon: <Mail className="h-5 w-5" />, href: "mailto:abhisheknair616@gmail.com", label: "Email" },
-    { icon: <Trophy className="h-5 w-5" />, href: "#", label: "Football", noLink: true },
-    { icon: <Dices className="h-5 w-5" />, href: "#", label: "Chess", noLink: true }
+    { 
+      icon: <img src="/lovable-uploads/3a4ffea9-b9a7-4ab5-b856-43061281fe2c.png" alt="Football" className="h-5 w-5" />, 
+      href: "#", 
+      label: "Football", 
+      noLink: true 
+    },
+    { 
+      icon: <img src="/lovable-uploads/a1a8d76c-9203-4ae2-bf51-0ffbfef138cc.png" alt="Chess" className="h-5 w-5" />, 
+      href: "#", 
+      label: "Chess", 
+      noLink: true 
+    }
   ];
 
   return (

@@ -12,6 +12,7 @@ interface ProjectCardProps {
   className?: string;
   index: number;
   createdAt: string;
+  inProgress?: boolean;
 }
 
 export default function ProjectCard({
@@ -23,7 +24,8 @@ export default function ProjectCard({
   repoUrl,
   className,
   index,
-  createdAt
+  createdAt,
+  inProgress = false
 }: ProjectCardProps) {
   return (
     <div
@@ -42,7 +44,15 @@ export default function ProjectCard({
       </div>
       
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-2 font-serif">{title}</h3>
+        <div className="flex justify-between items-center mb-3">
+          <h3 className="text-xl font-bold text-gray-900 font-serif">{title}</h3>
+          {inProgress && (
+            <span className="text-xs font-medium bg-amber-100 text-amber-800 px-2 py-1 rounded">
+              In Progress
+            </span>
+          )}
+        </div>
+        
         <div className="text-xs text-gray-500 mb-4">{createdAt}</div>
         
         <p className="text-gray-600 mb-6">{description}</p>

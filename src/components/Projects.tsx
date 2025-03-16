@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import ProjectCard from './ProjectCard';
 import { Button } from './ui/button';
@@ -13,13 +14,15 @@ interface Project {
   category: 'fullstack' | 'frontend' | 'backend' | 'python';
   tags: string[];
   liveUrl?: string;
-  repoUrl: string;
+  repoUrl?: string;
   createdAt: string;
+  inProgress?: boolean;
 }
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('all');
   const sectionRef = useRef<HTMLDivElement>(null);
+  const inProgressRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,14 +36,20 @@ export default function Projects() {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    const elements = [sectionRef.current, inProgressRef.current];
+    
+    elements.forEach(element => {
+      if (element) {
+        observer.observe(element);
+      }
+    });
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      elements.forEach(element => {
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
     };
   }, []);
 
@@ -110,6 +119,50 @@ export default function Projects() {
     }
   ];
 
+  // Projects in progress
+  const projectsInProgress: Project[] = [
+    {
+      id: 101,
+      title: "Football Juggle Counter using YOLO",
+      description: "An ML project that uses YOLO object detection to count football juggling movements in real-time video, helping athletes track their practice sessions.",
+      image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=2670&auto=format&fit=crop",
+      category: "python",
+      tags: ["Machine Learning", "YOLO", "Computer Vision", "TensorFlow"],
+      createdAt: "In Development",
+      inProgress: true
+    },
+    {
+      id: 102,
+      title: "Payment Portal Clone",
+      description: "A secure and responsive payment portal implementation with modern UI and multiple payment method integrations.",
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2670&auto=format&fit=crop",
+      category: "fullstack",
+      tags: ["React", "Node.js", "Stripe API", "Authentication"],
+      createdAt: "In Development",
+      inProgress: true
+    },
+    {
+      id: 103,
+      title: "Plant Disease Prediction using Stems",
+      description: "Research project exploring novel approaches to plant disease detection by analyzing stem patterns instead of traditional leaf analysis.",
+      image: "https://images.unsplash.com/photo-1465567603598-2e40006dea33?q=80&w=2670&auto=format&fit=crop",
+      category: "python",
+      tags: ["Research", "Deep Learning", "Agricultural Tech", "CNN"],
+      createdAt: "Research Phase",
+      inProgress: true
+    },
+    {
+      id: 104,
+      title: "AI-Powered Image Search Engine",
+      description: "A full-stack application with AI capabilities that allows semantic image searching based on natural language descriptions.",
+      image: "https://images.unsplash.com/photo-1579403124614-197f69d8187b?q=80&w=2564&auto=format&fit=crop",
+      category: "fullstack",
+      tags: ["AI", "Full Stack", "Vector Database", "Computer Vision"],
+      createdAt: "Planning Phase",
+      inProgress: true
+    }
+  ];
+
   const filteredProjects = projects.filter(project => 
     activeCategory === 'all' || project.category === activeCategory
   );
@@ -123,50 +176,84 @@ export default function Projects() {
   ];
 
   return (
-    <section 
-      id="projects" 
-      ref={sectionRef}
-      className="section bg-gray-50 transition-opacity duration-1000 opacity-0"
-    >
-      <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">Featured Projects</h2>
-        </div>
-        
-        <div className="flex justify-center mb-10">
-          <div className="flex flex-wrap justify-center gap-2 p-1 rounded-lg bg-gray-100">
-            {categories.map((category) => (
-              <button
-                key={category.value}
-                onClick={() => setActiveCategory(category.value)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                  activeCategory === category.value
-                    ? 'bg-white shadow-md text-blue-700'
-                    : 'text-gray-500 hover:text-gray-900'
-                }`}
-              >
-                {category.label}
-              </button>
+    <>
+      <section 
+        id="projects" 
+        ref={sectionRef}
+        className="section bg-gray-50 transition-opacity duration-1000 opacity-0"
+      >
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">Featured Projects</h2>
+          </div>
+          
+          <div className="flex justify-center mb-10">
+            <div className="flex flex-wrap justify-center gap-2 p-1 rounded-lg bg-gray-100">
+              {categories.map((category) => (
+                <button
+                  key={category.value}
+                  onClick={() => setActiveCategory(category.value)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                    activeCategory === category.value
+                      ? 'bg-white shadow-md text-blue-700'
+                      : 'text-gray-500 hover:text-gray-900'
+                  }`}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                tags={project.tags}
+                liveUrl={project.liveUrl}
+                repoUrl={project.repoUrl}
+                index={index}
+                createdAt={project.createdAt}
+              />
             ))}
           </div>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              tags={project.tags}
-              liveUrl={project.liveUrl}
-              repoUrl={project.repoUrl}
-              index={index}
-              createdAt={project.createdAt}
-            />
-          ))}
+      </section>
+      
+      <section 
+        id="projects-in-progress" 
+        ref={inProgressRef}
+        className="section bg-white transition-opacity duration-1000 opacity-0"
+      >
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">Projects in Progress</h2>
+            <p className="text-gray-600">
+              Current research and development initiatives that showcase ongoing innovation and learning.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projectsInProgress.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                tags={project.tags}
+                liveUrl={project.liveUrl}
+                repoUrl={project.repoUrl}
+                index={index}
+                createdAt={project.createdAt}
+                inProgress={true}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
